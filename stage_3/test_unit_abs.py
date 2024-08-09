@@ -72,6 +72,6 @@ class TestRegistrations(unittest.TestCase):
             "Не удалось зарегистрироваться",
             )
         browser.close()
-        
+
 if __name__ == "__main__":
     unittest.main()
