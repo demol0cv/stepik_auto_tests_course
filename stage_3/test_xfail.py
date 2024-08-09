@@ -8,9 +8,9 @@ def test_succeed():
 
 @pytest.mark.xfail()
 def test_not_succeed():
-    assert False
+    assert False  # noqa: B011, PT015
 
 
-@pytest.mark.skip
+@pytest.mark.skip()
 def test_skipped():
-    assert False
+    assert False  # noqa: B011, PT015
