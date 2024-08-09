@@ -15,7 +15,7 @@ def _very_important_fixture()->None:
 
 @pytest.fixture(autouse=True)
 def _print_smiling_faces()->None:
-    print(":-Р", "\n")  # noqa: RUF001
+    print(":-Р", "\n")
 
 
 class TestPrintSmilingFaces():
