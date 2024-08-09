@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 link = "http://selenium1py.pythonanywhere.com/"
 
 
-@pytest.fixture
+@pytest.fixture()
 def browser():
     print("\nstart browser for test..")
     browser = webdriver.Firefox()
@@ -14,7 +14,7 @@ def browser():
     browser.quit()
 
 @pytest.fixture(autouse=True)
-def prepare_data():
+def _prepare_data()->None:
     print()
     print("preparing some critical data for every test")
 
