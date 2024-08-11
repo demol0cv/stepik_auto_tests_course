@@ -7,7 +7,7 @@ def pytest_addoption(parser):
                      help="Choose browser: chrome or firefox")
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture()
 def browser(request):
     browser_name = request.config.getoption("browser_name")
     browser = None
@@ -18,7 +18,7 @@ def browser(request):
         print("\nstart firefox browser for test..")
         browser = webdriver.Firefox()
     else:
-        raise pytest.UsageError("--browser_name should be chrome or firefox")
+        raise pytest.UsageError("--browser_name should be chrome or firefox")  # noqa: EM101
     yield browser
     print("\nquit browser..")
     browser.quit()
